@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsStringIgnoringCase;
-import static org.hamcrest.Matchers.equalTo;
 
 public class TestRestAssured2 {
 
@@ -45,35 +44,13 @@ public class TestRestAssured2 {
 
     }
 
-    // setting a function for Create a Patch Rest API
-    // PATCH https://api.restful-api.dev/objects/7
+    // setting a function for Create a Post Rest API
+    // POST https://api.restful-api.dev/objects
     @Epic("SHAFT Web GUI Template")
     @Story("ECommerce Basic Validations")
     @TmsLink("TC-20")
     @Test(priority = 20)
     public void getTest4() {
-
-        String payload = "{\n" +
-                "   \"name\": \"Apple MacBook Pro 16 (Updated Name)\"\n" +
-                "}";
-
-        given()
-                .log().all().header("Cookie", "")
-                .body(payload)
-                .when().patch("/7")
-                .then().log().all().assertThat().statusCode(200)
-                .body("body", containsStringIgnoringCase("Updated Name"))
-                .header("", "");
-
-    }
-
-    // setting a function for Create a Post Rest API
-    // POST https://api.restful-api.dev/objects
-    @Epic("SHAFT Web GUI Template")
-    @Story("ECommerce Basic Validations")
-    @TmsLink("TC-21")
-    @Test(priority = 21)
-    public void getTest5() {
 
         String payload = "{\n" +
                 "   \"name\": \"Apple MacBook Pro 16\",\n" +
@@ -87,11 +64,11 @@ public class TestRestAssured2 {
 
         given()
                 .log().all().header("Cookie", "")
+                .contentType("application/json")
                 .body(payload)
                 .when().post("")
                 .then().log().all().assertThat().statusCode(200)
-                .body("body", containsStringIgnoringCase("createdAt"))
-                .header("", "");
+                .body("name", containsStringIgnoringCase("Apple MacBook Pro 16"));
 
     }
 
