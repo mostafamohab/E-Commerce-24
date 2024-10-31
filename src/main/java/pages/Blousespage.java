@@ -20,14 +20,19 @@ public class Blousespage {
 	// Store Xpath for Item
 	private By Item = By.xpath("//a[@title='Blouse'][@class='product_img_link']");
 
-	// Store Xpath for different Colour
-	private By Color = By.xpath("//a[@title='White']");
+	// Store Xpath for white Colour
+	private By whiteColor = By.xpath("//a[@title='White']");
+
+    // Store Xpath for black Colour
+    private By blackColor = By.xpath("//a[@title='Black']");
+
+
 	// Store Xpath for More Button
 	private By More = By.xpath("(//span[contains(text(),'More')][1])[1]");
 	// Store Xpath for Add to Cart Button
 	private By Addtocart = By.xpath("(//span[contains(text(),'Add to cart')][1])");
 	// Store Xpath for Proceed to Check Out First Button
-	private By Checkout1 = By.xpath("(//span[contains(text(),'Proceed to checkout')][1])");
+	private By Checkout1 = By.xpath("(//a//span[contains(text(),'Proceed to checkout')][1])");
 	// Store Xpath for Proceed to Check Out Second Button (Summary)
 	private By Checkout2 = By.xpath("(//span[contains(text(),'Proceed to checkout')][1][1])[2]");
 	// Store Xpath for Proceed to Check Out Third Button (Address)
@@ -63,10 +68,16 @@ public class Blousespage {
 	}
 
 	@Step("Function that returns xpath for Changed Color")
-	public Blousespage changeColor() {
-		driver.element().click(Color);
+	public Blousespage changetoWhiteColor() {
+		driver.element().click(whiteColor);
 		return this;
 	}
+
+    @Step("Function that returns xpath for Changed Color")
+    public Blousespage changetoBlackColor() {
+        driver.element().click(blackColor);
+        return this;
+    }
 
 	@Step("Function that returns xpath for Add to Cart Button")
 	public Blousespage addtoCart() {
@@ -76,7 +87,6 @@ public class Blousespage {
 
 	@Step("Function that returns xpath for Proceed to Check Out First Button")
 	public Blousespage clickCheckOut1() {
-		driver.element().waitToBeReady(Checkout1);
 		driver.element().click(Checkout1);
 		return this;
 	}
