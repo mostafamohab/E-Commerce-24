@@ -26,6 +26,17 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+          sudo systemctl start docker
+          sudo systemctl enable docker
+
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get install -y docker-compose
+
       - name: Set up Native Selenium Grid
         run: |
           if [ '${{ github.event.inputs.targetBrowser }}' == 'firefox' ]; then
