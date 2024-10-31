@@ -51,12 +51,12 @@ Part 3 :
 
 1)  web and mobile test automation utilization for an existing API test automation . initiated actions: 
 
-1- Current Framework Assessment and UI Automation Tools Integration
-2- Testing Strategy Definition and Test Suite Creation
-3- Data-Driven Testing Implementation and Setting Up CI/CD Pipeline
-4- Reporting and Logging Enhancement in order to Maintain and Monitor Tests
-5- Documentation, Training, Iteration and Feedback Gathering
+  1- Current Framework Assessment and UI Automation Tools Integration
+  2- Testing Strategy Definition and Test Suite Creation
+  3- Data-Driven Testing Implementation and Setting Up CI/CD Pipeline
+  4- Reporting and Logging Enhancement in order to Maintain and Monitor Tests
+  5- Documentation, Training, Iteration and Feedback Gathering
 
 2) Summary of Tools Used in contract testing for an e-commerce application:
-OpenAPI/Swagger: For defining API contracts.
-JUnit or Jest: For writing and executing tests.
+  OpenAPI/Swagger: For defining API contracts.
+  JUnit or Jest: For writing and executing tests.
