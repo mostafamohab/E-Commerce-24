@@ -24,44 +24,36 @@ public class TestRestAssured {
         // Then - Validate the Response
 
         // initializing rest assured base url as object from restassured services
-        io.restassured.RestAssured.baseURI = "https://api.restful-api.dev/objects";
+        io.restassured.RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
     }
 
     // setting a function for Get post by {id} Rest API
-    // GET https://api.restful-api.dev/objects
+    // GET https://jsonplaceholder.typicode.com/posts/1
     @Epic("SHAFT Web GUI Template")
     @Story("ECommerce Basic Validations")
     @TmsLink("TC-17")
     @Test(priority = 17)
     public void getTest1() {
-        given()
-                .log().all().header("Cookie", "")
-                .when().get("")
-                .then().log().all().assertThat().statusCode(200)
-                .body("name[0]", containsStringIgnoringCase("Google Pixel 6 Pro"))
+        given().log().all().header("Cookie", "__cfduid=de2354a31bda903ee9b1614f176bc71691613051811").when()
+                .get("posts/1").then().log().all().assertThat().statusCode(200)
+                .body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"))
                 .header("Server", "cloudflare");
 
     }
 
-    // setting a function for Create a Patch Rest API
-    // PATCH https://api.restful-api.dev/objects/7
+    // setting a function for Create a Post Rest API
+    // POST https://jsonplaceholder.typicode.com/posts
     @Epic("SHAFT Web GUI Template")
     @Story("ECommerce Basic Validations")
     @TmsLink("TC-18")
     @Test(priority = 18)
     public void getTest2() {
 
-        String payload = "{\n" +
-                "   \"name\": \"Apple MacBook Pro 16 (Updated Name)\"\n" +
-                "}";
-
-        given()
-                .log().all().header("Cookie", "")
-                .body(payload)
-                .when().patch("/7")
-                .then().log().all().assertThat().statusCode(200)
-                .body("body", containsStringIgnoringCase("Updated Name"))
-                .header("", "");
+        given().log().all().header("Cookie", "__cfduid=de2354a31bda903ee9b1614f176bc71691613051811")
+                .body("{\r\n" + "	\"title\": \"foo\",\r\n" + "    \"body\": \"bar\",\r\n" + "    \"userId\": 1\r\n"
+                        + "}")
+                .when().post("posts").then().log().all().assertThat().statusCode(201).body("body", equalTo(null))
+                .header("Content-Type", "application/json; charset=utf-8");
 
     }
 
