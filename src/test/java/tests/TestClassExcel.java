@@ -125,7 +125,7 @@ public class TestClassExcel {
 			.hoverOnItem()
 			.clickOnMore()
             .changetoWhiteColor()
-            .changetoWhiteColor()
+            .changetoBlackColor()
             .changetoWhiteColor()
 			.addtoCart();
 
@@ -155,7 +155,7 @@ public class TestClassExcel {
                 .hoverOnItem()
                 .clickOnMore()
                 .changetoWhiteColor()
-                .changetoWhiteColor()
+                .changetoBlackColor()
                 .changetoWhiteColor()
                 .addtoCart();
 
@@ -188,7 +188,7 @@ public class TestClassExcel {
                 .hoverOnItem()
                 .clickOnMore()
                 .changetoWhiteColor()
-                .changetoWhiteColor()
+                .changetoBlackColor()
                 .changetoWhiteColor()
                 .addtoCart();
 
@@ -242,7 +242,7 @@ public class TestClassExcel {
                 .hoverOnItem()
                 .clickOnMore()
                 .changetoWhiteColor()
-                .changetoWhiteColor()
+                .changetoBlackColor()
                 .changetoWhiteColor()
                 .addtoCart();
 
