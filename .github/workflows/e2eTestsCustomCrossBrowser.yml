@@ -17,6 +17,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16'
+
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+          sudo apt-get update
+          sudo apt-get install -y docker-ce
+
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+
       - name: Set up Native Selenium Grid Firefox
         run: docker-compose -f src/main/resources/docker-compose/selenium4.yml up --scale chrome=0 --scale edge=0 --scale firefox=4 -d --force-recreate
         shell: bash
@@ -51,7 +66,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Firefox_Custom_Linux_Grid_Allure_HTML
-          path: "allure-report/index.html"
+          path: "allure-report"
 
   Chrome_Custom_Linux_Grid:
     runs-on: ubuntu-22.04
@@ -62,6 +77,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '16'
+
+      - name: Install Docker
+        run: |
+            sudo apt-get update
+            sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+            echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+            sudo apt-get update
+            sudo apt-get install -y docker-ce
+
+      - name: Install Docker Compose
+        run: |
+            sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+            sudo chmod +x /usr/local/bin/docker-compose     
+
       - name: Set up Native Selenium Grid Chrome
         run: docker-compose -f src/main/resources/docker-compose/selenium4.yml up --scale chrome=4 --scale edge=0 --scale firefox=0 -d --force-recreate
         shell: bash
@@ -96,7 +126,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Chrome_Custom_Linux_Grid_Allure_HTML
-          path: "allure-report/index.html"
+          path: "allure-report"
 
   Edge_Custom_Linux_Grid:
     runs-on: ubuntu-22.04
@@ -107,6 +137,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
             node-version: '16'
+
+      - name: Install Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+          echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
+          sudo apt-get update
+          sudo apt-get install -y docker-ce
+
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose   
+
       - name: Set up Native Selenium Grid Edge
         run: docker-compose -f src/main/resources/docker-compose/selenium4.yml up --scale chrome=0 --scale edge=4 --scale firefox=0 -d --force-recreate
         shell: bash
@@ -141,4 +186,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Edge_Custom_Linux_Grid_Allure_HTML
-          path: "allure-report/index.html"
+          path: "allure-report"
