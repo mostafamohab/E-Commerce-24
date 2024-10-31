@@ -65,32 +65,4 @@ public class TestRestAssured {
 
     }
 
-    // setting a function for Create a Post Rest API
-    // POST https://api.restful-api.dev/objects
-    @Epic("SHAFT Web GUI Template")
-    @Story("ECommerce Basic Validations")
-    @TmsLink("TC-19")
-    @Test(priority = 19)
-    public void getTest3() {
-
-        String payload = "{\n" +
-                "   \"name\": \"Apple MacBook Pro 16\",\n" +
-                "   \"data\": {\n" +
-                "      \"year\": 2019,\n" +
-                "      \"price\": 1849.99,\n" +
-                "      \"CPU model\": \"Intel Core i9\",\n" +
-                "      \"Hard disk size\": \"1 TB\"\n" +
-                "   }\n" +
-                "}";
-
-        given()
-                .log().all().header("Cookie", "")
-                .body(payload)
-                .when().post("")
-                .then().log().all().assertThat().statusCode(200)
-                .body("body", containsStringIgnoringCase("createdAt"))
-                .header("", "");
-
-    }
-
 }
