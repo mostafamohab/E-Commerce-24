@@ -143,9 +143,9 @@ public class TestClassJson {
 		new Blousespage(driver)
 			.hoverOnItem()
 			.clickOnMore()
-            .changeColor()
-            .changeColor()
-            .changeColor()
+            .changetoWhiteColor()
+            .changetoBlackColor()
+            .changetoWhiteColor()
 			.addtoCart();
 
 	}
@@ -170,9 +170,9 @@ public class TestClassJson {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoBlackColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)
@@ -200,9 +200,9 @@ public class TestClassJson {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoBlackColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)
@@ -248,9 +248,9 @@ public class TestClassJson {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoBlackColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)

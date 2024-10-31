@@ -124,9 +124,9 @@ public class TestClassExcel {
 		new Blousespage(driver)
 			.hoverOnItem()
 			.clickOnMore()
-            .changeColor()
-            .changeColor()
-            .changeColor()
+            .changetoWhiteColor()
+            .changetoWhiteColor()
+            .changetoWhiteColor()
 			.addtoCart();
 
 	}
@@ -154,9 +154,9 @@ public class TestClassExcel {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)
@@ -187,9 +187,9 @@ public class TestClassExcel {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)
@@ -241,9 +241,9 @@ public class TestClassExcel {
         new Blousespage(driver)
                 .hoverOnItem()
                 .clickOnMore()
-                .changeColor()
-                .changeColor()
-                .changeColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
+                .changetoWhiteColor()
                 .addtoCart();
 
         new Blousespage(driver)
